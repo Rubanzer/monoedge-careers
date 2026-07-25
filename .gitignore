@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+
+# Never commit the source PDFs — they are inputs, not site content.
+*.pdf
