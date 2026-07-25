@@ -1,4 +1,4 @@
-const STEPS = ['Your details', 'Screening', 'Voice note'] as const;
+const STEPS = ['Your details', 'Screening', 'In your words'] as const;
 
 /**
  * The progress indicator is a measurement rail rather than three circles:

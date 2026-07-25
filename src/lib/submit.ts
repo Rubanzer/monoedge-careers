@@ -20,7 +20,6 @@ export type Submission = {
   website: string;
   openedAt: number;
   resume: SubmissionFile | null;
-  voiceNote: SubmissionFile | null;
 };
 
 export function endpoint(): string {

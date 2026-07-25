@@ -167,23 +167,14 @@ export const computerVisionEngineer: Role = {
         { id: 'D', text: 'Request a larger GPU at the edge before changing the model' },
       ],
     },
-    {
-      id: 'q4',
-      kind: 'text',
-      question:
-        'Describe one computer vision system you took into production. What was the hardest part — and was it the model, the data, or the hardware?',
-      hint: 'A few sentences is enough. Specifics matter more than length.',
-      maxLength: 900,
-    },
   ],
 
-  voice: {
+  written: {
     brief:
-      'Read the paragraph below exactly as written. We are listening for clarity and pace — this is how you would explain a system to a plant manager.',
-    paragraph: [
-      'Good morning. I want to walk you through what the camera on line three is actually doing, in plain terms.',
-      'It takes about forty frames a second as the strip passes underneath. For each frame, the model marks anything that looks like a surface defect and records where it sat on the coil.',
-      'It will not catch everything yet. Right now it agrees with your QC team about eight times out of ten, and we log every disagreement so we can close that gap.',
-    ],
+      'One question, and the part of the application we read most closely. Specifics matter more than length.',
+    prompt:
+      'Describe one computer vision system you took into production. What was the hardest part — and was it the model, the data, or the hardware?',
+    hint: 'A few hundred words at most. Tell us what actually happened, including what did not work.',
+    maxLength: 2000,
   },
 };

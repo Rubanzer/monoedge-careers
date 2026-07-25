@@ -171,23 +171,14 @@ export const dataScientist: Role = {
         { id: 'D', text: 'Model each source separately and combine the predictions at the end' },
       ],
     },
-    {
-      id: 'q4',
-      kind: 'text',
-      question:
-        'Tell us about a model or analysis you shipped where the business impact was measurable. What was the number, and how did you establish it was real?',
-      hint: 'A few sentences is enough. We care about how you defended the claim.',
-      maxLength: 900,
-    },
   ],
 
-  voice: {
+  written: {
     brief:
-      'Read the paragraph below exactly as written. We are listening for clarity and pace — this is how you would present a finding to a plant head.',
-    paragraph: [
-      'Thank you for the time. I want to share one finding from last month, and I want to be upfront about how confident we are in it.',
-      'Rejects on the night shift run about four percent higher than the day shift. That gap holds even after we account for the material grade and the line speed.',
-      'What we cannot tell you yet is why. It could be lighting, it could be staffing, it could be something we have not measured. We would like two weeks and a small trial to find out.',
-    ],
+      'One question, and the part of the application we read most closely. We care about how you defended the claim, not the size of the number.',
+    prompt:
+      'Tell us about a model or analysis you shipped where the business impact was measurable. What was the number, and how did you establish it was real?',
+    hint: 'A few hundred words at most. Include what you could not rule out.',
+    maxLength: 2000,
   },
 };

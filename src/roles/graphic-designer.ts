@@ -169,23 +169,14 @@ export const graphicDesigner: Role = {
         { id: 'D', text: 'Leave it out until there is more data' },
       ],
     },
-    {
-      id: 'q4',
-      kind: 'text',
-      question:
-        'Point us to one piece of work you are proud of and tell us what you were responsible for. If it was a team effort, say which parts were yours.',
-      hint: 'A link plus a few sentences. Portfolio links also go in the field above.',
-      maxLength: 900,
-    },
   ],
 
-  voice: {
+  written: {
     brief:
-      'Read the paragraph below exactly as written. This is a voiceover script of the kind you would cut against real footage — we are listening for pace and clarity.',
-    paragraph: [
-      'This is a rolling mill in Maharashtra. It runs two shifts a day, and until last year, nobody could say exactly where the losses were coming from.',
-      'MonoEdge started by watching. Cameras on the line, sensor data from the machines, and four weeks of doing nothing but listening to the plant.',
-      'The first report was one page. It showed that most of the rejects came from a single shift, on a single line, on the days the input material changed. That was enough to act on.',
-    ],
+      'One question, and the part of the application we read most closely. We would rather see one piece explained honestly than a list of everything you have touched.',
+    prompt:
+      'Point us to one piece of work you are proud of and tell us what you were responsible for. If it was a team effort, say which parts were yours.',
+    hint: 'A link plus a few hundred words at most. Say what the piece had to achieve, and whether it did.',
+    maxLength: 2000,
   },
 };

@@ -33,7 +33,7 @@ npm run preview   # serve the built output
 ## Connecting the Google Sheet
 
 The form posts to a Google Apps Script Web App, which appends a row to the Sheet
-and writes the CV and voice note to Drive.
+and writes the CV to Drive.
 
 1. Open the destination Google Sheet → **Extensions → Apps Script**.
 2. Replace `Code.gs` with [`apps-script/Code.gs`](apps-script/Code.gs) and save.
@@ -46,9 +46,8 @@ and redeploy without rebuilding.
 
 Each role writes to its own tab, mapped in `ROLE_SHEETS` at the top of the script:
 CV Engineer → `Sheet1`, Data Scientist → `Sheet2`, Designer → `Sheet3`. Headers are
-written the first time a tab is used, and missing tabs are created. Files go to a
-`MonoEdge Applications/<role>/` folder in Drive; voice notes cannot live in a
-spreadsheet cell, so the Sheet stores a link.
+written the first time a tab is used, and missing tabs are created. CVs go to a
+`MonoEdge Applications/<role>/` folder in Drive, and the Sheet stores a link.
 
 **After editing `Code.gs`, redeploy as a new version** — Manage deployments →
 edit → Version: New version. Otherwise the live URL keeps serving the old code.

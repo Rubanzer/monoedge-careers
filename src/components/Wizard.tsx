@@ -3,8 +3,9 @@ import { motion } from 'motion/react';
 import type { Role } from '../roles';
 import { Field } from './Field';
 import { StepRail } from './StepRail';
-import { VoiceRecorder, type Recording } from './VoiceRecorder';
 import { fileToBase64, submitApplication, type Submission } from '../lib/submit';
+
+const EXTRA_MAX = 700;
 
 const EXPERIENCE = ['Under 2 years', '2–4 years', '4–6 years', '6–9 years', '9+ years'];
 const NOTICE = ['Immediate', 'Within 15 days', '30 days', '60 days', '90 days or more'];
@@ -39,8 +40,8 @@ export function Wizard({ role }: { role: Role }) {
   const [details, setDetails] = useState<Details>(EMPTY_DETAILS);
   const [resume, setResume] = useState<File | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [recording, setRecording] = useState<Recording | null>(null);
-  const [recorderUnsupported, setRecorderUnsupported] = useState(false);
+  const [written, setWritten] = useState('');
+  const [extra, setExtra] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<'editing' | 'sending' | 'sent'>('editing');
@@ -100,8 +101,8 @@ export function Wizard({ role }: { role: Role }) {
   }
 
   async function handleSubmit() {
-    if (!recording && !recorderUnsupported) {
-      setErrors({ voice: 'Record the paragraph before you submit.' });
+    if (written.trim().length < 40) {
+      setErrors({ written: 'Give this one a real answer — a few sentences at least.' });
       return;
     }
 
@@ -113,7 +114,7 @@ export function Wizard({ role }: { role: Role }) {
         roleId: role.id,
         roleTitle: role.title,
         details: { ...details },
-        answers,
+        answers: { ...answers, written, extra },
         website: honeypot,
         openedAt,
         resume: resume
@@ -121,13 +122,6 @@ export function Wizard({ role }: { role: Role }) {
               name: resume.name,
               mimeType: resume.type || 'application/octet-stream',
               data: await fileToBase64(resume),
-            }
-          : null,
-        voiceNote: recording
-          ? {
-              name: `voice-note.${recording.mimeType.includes('mp4') ? 'm4a' : 'webm'}`,
-              mimeType: recording.mimeType,
-              data: await fileToBase64(recording.blob),
             }
           : null,
       };
@@ -148,7 +142,7 @@ export function Wizard({ role }: { role: Role }) {
           <p className="t-label">Application received</p>
           <h2 className="t-display mt-4 text-[clamp(1.75rem,4vw,2.5rem)]">Thank you, {details.fullName.split(' ')[0]}.</h2>
           <p className="mt-5 text-[1.0625rem] leading-relaxed text-[color:var(--color-muted)]">
-            Your application for {role.title} is with us, voice note included. We read every one.
+            Your application for {role.title} is with us. We read every one.
           </p>
           <p className="mt-4 text-[1.0625rem] leading-relaxed text-[color:var(--color-muted)]">
             If it is a fit, you will hear from us within two weeks. If you do not hear back in that
@@ -169,8 +163,8 @@ export function Wizard({ role }: { role: Role }) {
         <p className="t-label">Apply</p>
         <h2 className="t-display mt-4 text-[clamp(1.75rem,4vw,2.5rem)]">Apply for this role</h2>
         <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-[color:var(--color-muted)]">
-          Three parts, about ten minutes. The last one asks you to record a short paragraph, so find a
-          quiet spot before you start.
+          Three parts, about ten minutes. The last one is a written question we read properly, so it is
+          worth giving it a few minutes rather than a few lines.
         </p>
 
         <div className="mt-12 border rule bg-[color:var(--color-paper)] p-6 sm:p-9">
@@ -420,40 +414,56 @@ export function Wizard({ role }: { role: Role }) {
 
                 {step === 2 ? (
                   <div className="space-y-6">
-                    <h3 className="t-display text-[1.25rem]">Voice note</h3>
+                    <h3 className="t-display text-[1.25rem]">In your words</h3>
                     <p className="text-[0.9375rem] leading-relaxed text-[color:var(--color-muted)]">
-                      {role.voice.brief}
+                      {role.written.brief}
                     </p>
 
-                    <blockquote className="border-l-2 border-[color:var(--color-edge-blue)] bg-[color:var(--color-haze)] py-4 pl-5 pr-4">
-                      {role.voice.paragraph.map((line, index) => (
-                        <p
-                          key={index}
-                          className="text-[1rem] leading-relaxed text-[color:var(--color-void)] [&+p]:mt-3"
-                        >
-                          {line}
-                        </p>
-                      ))}
-                    </blockquote>
-
-                    <VoiceRecorder
-                      recording={recording}
-                      onChange={(next) => {
-                        setRecording(next);
-                        setErrors((prev) => {
-                          const copy = { ...prev };
-                          delete copy.voice;
-                          return copy;
-                        });
-                      }}
-                      onUnsupported={setRecorderUnsupported}
-                    />
-
-                    {errors.voice ? (
-                      <p role="alert" className="t-readout text-[color:var(--color-edge-blue)]">
-                        {errors.voice}
+                    <div>
+                      <p className="text-[1.0625rem] font-medium leading-relaxed">
+                        {role.written.prompt}
                       </p>
-                    ) : null}
+                      <textarea
+                        id="written"
+                        rows={10}
+                        maxLength={role.written.maxLength}
+                        className="field-input mt-4 resize-y"
+                        value={written}
+                        aria-invalid={!!errors.written}
+                        onChange={(event) => {
+                          setWritten(event.target.value);
+                          setErrors((prev) => {
+                            const next = { ...prev };
+                            delete next.written;
+                            return next;
+                          });
+                        }}
+                      />
+                      <div className="mt-1.5 flex justify-between gap-4">
+                        <p className="text-[0.8125rem] text-[color:var(--color-muted)]">
+                          {role.written.hint}
+                        </p>
+                        <p className="t-readout shrink-0 text-[color:var(--color-muted)]">
+                          {written.length}/{role.written.maxLength}
+                        </p>
+                      </div>
+                      {errors.written ? (
+                        <p role="alert" className="t-readout mt-2 text-[color:var(--color-edge-blue)]">
+                          {errors.written}
+                        </p>
+                      ) : null}
+                    </div>
+
+                    <Field id="extra" label="Anything else we should know" optional>
+                      <textarea
+                        id="extra"
+                        rows={3}
+                        maxLength={EXTRA_MAX}
+                        className="field-input resize-y"
+                        value={extra}
+                        onChange={(event) => setExtra(event.target.value)}
+                      />
+                    </Field>
                   </div>
                 ) : null}
             </motion.div>

@@ -36,8 +36,11 @@ export type Role = {
   signal: 'calibration' | 'timeseries' | 'frame';
   sections: Section[];
   screening: ScreeningQuestion[];
-  voice: {
+  /** Part 3 — the long-form answer we actually read. */
+  written: {
     brief: string;
-    paragraph: string[];
+    prompt: string;
+    hint: string;
+    maxLength: number;
   };
 };

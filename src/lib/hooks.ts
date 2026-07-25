@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 
 function prefersReducedMotion(): boolean {
@@ -56,21 +56,4 @@ export function useReveal<T extends HTMLElement>() {
   }, []);
 
   return ref;
-}
-
-/** Elapsed seconds while `running` is true. Used by the recorder read-out. */
-export function useElapsed(running: boolean): number {
-  const [elapsed, setElapsed] = useState(0);
-
-  useEffect(() => {
-    if (!running) return;
-    setElapsed(0);
-    const started = performance.now();
-    const id = window.setInterval(() => {
-      setElapsed((performance.now() - started) / 1000);
-    }, 100);
-    return () => window.clearInterval(id);
-  }, [running]);
-
-  return elapsed;
 }

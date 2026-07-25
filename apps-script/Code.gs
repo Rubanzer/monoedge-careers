@@ -62,10 +62,9 @@ function doPost(e) {
 
     var folder = roleFolder(payload.roleId);
     var resumeUrl = saveFile(folder, payload.resume, details.fullName + ' — CV');
-    var voiceUrl = saveFile(folder, payload.voiceNote, details.fullName + ' — voice note');
 
     var sheet = sheetForRole(payload.roleId, payload.answers || {});
-    sheet.appendRow(buildRow(payload, details, resumeUrl, voiceUrl));
+    sheet.appendRow(buildRow(payload, details, resumeUrl));
 
     return json({ ok: true });
   } catch (error) {
@@ -120,7 +119,6 @@ function sheetForRole(roleId, answers) {
       'Notice period',
       'Links',
       'CV',
-      'Voice note',
     ].concat(answerKeys(answers));
 
     sheet.appendRow(headers);
@@ -131,7 +129,7 @@ function sheetForRole(roleId, answers) {
   return sheet;
 }
 
-function buildRow(payload, details, resumeUrl, voiceUrl) {
+function buildRow(payload, details, resumeUrl) {
   var answers = payload.answers || {};
   return [
     new Date(),
@@ -145,7 +143,6 @@ function buildRow(payload, details, resumeUrl, voiceUrl) {
     details.notice || '',
     details.links || '',
     resumeUrl,
-    voiceUrl,
   ].concat(
     answerKeys(answers).map(function (key) {
       return answers[key];
