@@ -44,9 +44,11 @@ and writes the CV and voice note to Drive.
 `config.js` is a plain runtime file, not bundled — you can change the endpoint
 and redeploy without rebuilding.
 
-The script creates one tab per role (`CV-ENG`, `DATA-SCI`, `DESIGN`) with headers
-on first submission, and a `MonoEdge Applications/<role>/` folder in Drive for the
-files. Voice notes cannot live in a spreadsheet cell, so the Sheet stores a link.
+Each role writes to its own tab, mapped in `ROLE_SHEETS` at the top of the script:
+CV Engineer → `Sheet1`, Data Scientist → `Sheet2`, Designer → `Sheet3`. Headers are
+written the first time a tab is used, and missing tabs are created. Files go to a
+`MonoEdge Applications/<role>/` folder in Drive; voice notes cannot live in a
+spreadsheet cell, so the Sheet stores a link.
 
 **After editing `Code.gs`, redeploy as a new version** — Manage deployments →
 edit → Version: New version. Otherwise the live URL keeps serving the old code.

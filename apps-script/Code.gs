@@ -24,6 +24,15 @@ var SHEET_ID = '';
 // Files land here. The folder is created on first submission.
 var DRIVE_FOLDER = 'MonoEdge Applications';
 
+// Which tab each role writes to. Change a value here to point a role at a
+// different tab; a role with no entry falls back to a tab named after its id.
+// Missing tabs are created on first submission.
+var ROLE_SHEETS = {
+  'CV-ENG': 'Sheet1', // Senior Computer Vision Engineer
+  'DATA-SCI': 'Sheet2', // Senior Data Scientist
+  'DESIGN': 'Sheet3', // Graphic Designer & Video Editor
+};
+
 // A human filling three parts cannot get here in under this many seconds.
 var MIN_SECONDS_ON_PAGE = 20;
 
@@ -88,12 +97,17 @@ function answerKeys(answers) {
 
 /** One tab per role, because each role asks different questions. */
 function sheetForRole(roleId, answers) {
-  var name = roleId || 'UNKNOWN';
+  var name = ROLE_SHEETS[roleId] || roleId || 'UNKNOWN';
   var spreadsheet = book();
   var sheet = spreadsheet.getSheetByName(name);
 
   if (!sheet) {
     sheet = spreadsheet.insertSheet(name);
+  }
+
+  // Headers go in when the tab is empty — which covers both a tab we just
+  // created and a pre-existing blank Sheet1.
+  if (sheet.getLastRow() === 0) {
     var headers = [
       'Timestamp',
       'Role',
