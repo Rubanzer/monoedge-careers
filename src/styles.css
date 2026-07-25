@@ -209,6 +209,44 @@ html.lenis {
 }
 
 /* ---------------------------------------------------------------------------
+   Hero spec row
+
+   Cells need breathing room on both sides of a divider, but the first cell
+   in each row must stay flush with the page margin. Which cell that is
+   changes with the column count, so it is handled per breakpoint.
+--------------------------------------------------------------------------- */
+
+.spec-grid > * {
+  border-bottom: 1px solid var(--color-rule);
+  padding-block: 1rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .spec-grid > *:nth-child(odd) {
+    border-right: 1px solid var(--color-rule);
+  }
+  .spec-grid > *:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .spec-grid > * {
+    padding-block: 1.25rem;
+    padding-left: 1.5rem;
+    border-right: 1px solid var(--color-rule);
+  }
+  .spec-grid > *:first-child {
+    padding-left: 0;
+  }
+  .spec-grid > *:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Form controls
 --------------------------------------------------------------------------- */
 

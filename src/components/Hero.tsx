@@ -36,11 +36,11 @@ export function Hero({ role }: { role: Role }) {
           </div>
         </div>
 
-        <dl className="mt-14 grid grid-cols-1 border-t rule sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="spec-grid mt-14 grid grid-cols-1 border-t rule sm:grid-cols-2 lg:grid-cols-4">
           {SPEC_KEYS.map((key) => (
-            <div key={key} className="border-b rule py-4 sm:border-r sm:last:border-r-0 sm:pr-6 lg:py-5">
+            <div key={key}>
               <dt className="t-label">{key}</dt>
-              <dd className="t-readout mt-2 pr-4 text-[color:var(--color-void)]">{spec[key]}</dd>
+              <dd className="t-readout mt-2 text-[color:var(--color-void)]">{spec[key]}</dd>
             </div>
           ))}
         </dl>
