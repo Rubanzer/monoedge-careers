@@ -29,11 +29,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # enablement turns Pages on via the API, so the repo needs no manual
-      # Settings > Pages step before the first deploy.
+      # Requires Settings > Pages > Source: GitHub Actions to be set once by
+      # a repo admin. The workflow token cannot create the Pages site itself.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
