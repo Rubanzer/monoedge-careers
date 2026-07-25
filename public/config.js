@@ -9,5 +9,6 @@
  * fails with a visible message rather than silently losing an application.
  */
 window.MONOEDGE = {
-  ENDPOINT: '',
+  ENDPOINT:
+    'https://script.google.com/a/macros/monoedge.in/s/AKfycbyFgxYa9LUUMkhhobVPgz4NgNICPlYkUZ9OsG-2OCBEJweqXquXOCl7LZi5CbVKIxKu/exec',
 };
