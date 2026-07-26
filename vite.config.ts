@@ -19,9 +19,13 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
     rollupOptions: {
-      input: Object.fromEntries(
-        ROLE_SLUGS.map((slug) => [slug, resolve(__dirname, `pages/${slug}/index.html`)]),
-      ),
+      input: {
+        // The careers index, which links out to each role.
+        index: resolve(__dirname, 'pages/index.html'),
+        ...Object.fromEntries(
+          ROLE_SLUGS.map((slug) => [slug, resolve(__dirname, `pages/${slug}/index.html`)]),
+        ),
+      },
     },
   },
 });

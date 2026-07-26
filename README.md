@@ -1,18 +1,19 @@
 # MonoEdge hiring funnel
 
-Three standalone application pages — one per open role. Each page carries its
-own job description, its own screening questions, and its own voice-note script.
-There are no links between them: a candidate who receives one link sees one role.
+A careers index listing the open roles, plus one application page per role. Each
+role page carries its own job description, screening questions, and written
+question, and works as a standalone link you can send to one candidate.
 
-| Role | URL |
+| Page | URL |
 | --- | --- |
+| Careers index | `/hiring/` |
 | Senior Computer Vision Engineer | `/hiring/computer-vision-engineer-7f3ac1/` |
 | Senior Data Scientist | `/hiring/data-scientist-4b9e26/` |
 | Graphic Designer & Video Editor | `/hiring/graphic-designer-d8c105/` |
 
-Slugs carry a random suffix so the pages are not guessable siblings, and every
-page is `noindex` so they stay out of search results. This is obscurity, not
-access control — the repository is public and so are the pages.
+Slugs keep their random suffix from when the pages were unlisted. It no longer
+buys anything now that the index links to all three, but the URLs are published,
+so changing them would break links already sent.
 
 ## Running it
 
@@ -21,9 +22,7 @@ npm install
 npm run dev
 ```
 
-Then open one of the slug paths above at `http://localhost:5173`. There is no
-index page — that is deliberate, so `/hiring/` never becomes a directory of all
-three roles.
+The careers index is at `http://localhost:5173/`, and each role at its slug path.
 
 ```bash
 npm run build     # type-check, then build all three into dist/
@@ -90,8 +89,17 @@ Nothing else needs to change — display type is the only thing that reads it.
 **Type 2 is JetBrains Mono**, which is open licensed and loads from Google Fonts.
 It carries every label, readout, and button on the page.
 
-The wordmark in `src/components/Wordmark.tsx` is a typographic stand-in. Replace
-it when the logo files from the brand book are available.
+**The logo** comes from `brand/logo-source.jpeg`. The source has a wide white
+margin that would leave the mark tiny at header size, so `crop-logo.mjs` trims it
+and writes `public/monoedge-mark.png` and `public/favicon.png`:
+
+```bash
+node crop-logo.mjs
+```
+
+Re-run that if the source is ever replaced. Note the assets are JPEG-derived and
+therefore have a white background — fine on this site, which is white throughout,
+but a vector original would be better if the brand book has one.
 
 ## Editing content
 
