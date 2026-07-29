@@ -26,14 +26,6 @@ export const frontendEngineer: Role = {
       ],
     },
     {
-      heading: 'Why this role exists',
-      kind: 'prose',
-      body: [
-        'The intelligence in our product is only as useful as the screen it arrives on. Our user is a plant owner or a shift supervisor who has been shown dashboards before and was disappointed — too many charts, not enough answers. The interface is where we either earn their trust or lose it.',
-        'This role owns that surface. You will build the parts of the product people actually look at: the reports, the alerts, the views that take a hard industrial problem and make it legible in a glance. Clarity is the whole job — a screen that is beautiful but confusing has failed.',
-      ],
-    },
-    {
       heading: "What you'll work on",
       kind: 'list',
       body: [
@@ -85,8 +77,8 @@ export const frontendEngineer: Role = {
       kind: 'list',
       body: [
         {
-          lead: 'A recent graduate',
-          text: 'in Computer Science, IT, Design, or a related field — or a self-taught developer with work you can show. The degree matters less than what you have built.',
+          lead: 'A recent graduate in any engineering discipline, Computer Science, or Design',
+          text: '— or a self-taught developer with work you can show. The degree matters less than what you have built.',
         },
         {
           lead: 'Solid web fundamentals:',

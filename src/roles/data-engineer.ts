@@ -26,14 +26,6 @@ export const dataEngineer: Role = {
       ],
     },
     {
-      heading: 'Why this role exists',
-      kind: 'prose',
-      body: [
-        'Every model, every report, every answer our product gives sits on top of data — and in a factory that data is a mess. PLCs stream at 10 to 100 Hz, the lab records once a shift, the ERP updates once a day, units are inconsistent, tags are undocumented, and sources go quiet without warning.',
-        'This role builds the layer that turns all of that into something clean, joined, and queryable. You are the reason the data scientist and the Business Brain can trust the numbers they work with. It is foundational, unglamorous, and genuinely hard — and getting it right is what makes everything above it possible.',
-      ],
-    },
-    {
       heading: "What you'll work on",
       kind: 'list',
       body: [
@@ -85,8 +77,8 @@ export const dataEngineer: Role = {
       kind: 'list',
       body: [
         {
-          lead: 'A recent graduate',
-          text: 'in Computer Science, IT, Data Science, Electronics, Instrumentation, or a related field. What matters is comfort with data and code, not the exact branch.',
+          lead: 'A recent graduate in any engineering discipline',
+          text: 'or a related field. What matters is comfort with data and code, not the exact branch.',
         },
         {
           lead: 'Solid Python and SQL:',

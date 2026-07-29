@@ -14,9 +14,8 @@ production data to quality, energy, and cost, and tells the people running the
 floor what is going wrong and why — in English, Hindi, and Marathi.
 
 We are a technically-driven, bootstrapped company defining a new category in
-industrial optimization. This is our **first graduate role**, and the person we
-hire will help take our core product, the *Business Brain*, live on real
-factory floors.
+industrial optimization. The person we hire will help take our core product, the
+*Business Brain*, live on real factory floors.
 
 ## About the role
 
@@ -58,20 +57,17 @@ senior team that has shipped all three.
 
 ## Who should apply
 
-We are looking for a recent graduate in **Instrumentation, Electronics,
-Electrical, Mechanical, Computer Science, IT, Data Science, or a related
-engineering discipline**. What matters is the mix of the physical and the
-analytical, not the exact branch.
+We are looking for a recent graduate in **any engineering discipline**. What
+matters is the mix of the physical and the analytical, not the exact branch.
 
 You are a strong fit if you have:
 
 - A genuine willingness to travel and to work on a plant floor — hot, loud, and
   unglamorous. Spending a week commissioning a system at a factory should sound
   good, not off-putting.
-- Comfort with data and code: working knowledge of **Python** and basic **SQL**,
-  the ability to use **pandas** to pull a dataset apart, and to make a clear
-  chart. Production-grade software experience is not required, but you should be
-  able to write a script that works.
+- Some basic coding knowledge: you can write a simple **Python** script and are
+  comfortable working with data. Production-grade software experience is not
+  required — the willingness to learn matters more.
 - A basic, honest grasp of **machine learning**: training vs. testing,
   overfitting, and why a model that scores well on paper can still be wrong on
   the floor. Depth is not expected — curiosity and clear thinking are.
@@ -96,7 +92,7 @@ familiarity with Git and the command line.
 - End-to-end exposure to **industrial automation, data analytics, and applied
   ML** — a combination that is hard to get anywhere as a fresher.
 - A small, bootstrapped team where your work reaches a real customer quickly.
-- We will invest in you as our first graduate hire.
+- We will invest in your growth.
 
 ## Details
 
@@ -105,7 +101,7 @@ familiarity with Git and the command line.
 | **Location** | Pune, with frequent travel to customer plants and automation partners across India |
 | **Type** | Full-time, graduate / entry-level |
 | **Reports to** | Founder and senior team |
-| **Eligibility** | 2025 and 2026 graduates; engineering / science disciplines as above |
+| **Eligibility** | 2025 and 2026 graduates; any engineering discipline; basic coding knowledge |
 | **Compensation** | _[To be confirmed by MonoEdge — please fill before circulating]_ |
 
 ## Selection process

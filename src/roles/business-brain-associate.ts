@@ -34,14 +34,6 @@ export const businessBrainAssociate: Role = {
       ],
     },
     {
-      heading: 'Why this role exists',
-      kind: 'prose',
-      body: [
-        'A plant floor is not a clean environment. The PLCs are from four different vendors, the tags are undocumented, the automation partner is a phone call away, and the shift supervisor has seen software promise things before. Getting our system deployed and trusted there is real, hands-on work that a slide deck cannot do.',
-        'This is our first graduate role. We are looking for someone at the start of their career who wants to learn the plant floor properly — not from a desk — and who is as comfortable pulling a cable and reading a PLC tag list as they are opening a dataset and asking why a number moved.',
-      ],
-    },
-    {
       heading: "What you'll work on",
       kind: 'list',
       body: [
@@ -96,16 +88,16 @@ export const businessBrainAssociate: Role = {
       kind: 'list',
       body: [
         {
-          lead: 'A recent graduate',
-          text: 'in Instrumentation, Electronics, Electrical, Mechanical, Computer Science, IT, Data Science, or a related engineering discipline. What matters is the mix of the physical and the analytical, not the exact branch.',
+          lead: 'A recent graduate in any engineering discipline.',
+          text: 'What matters is the mix of the physical and the analytical, and a genuine willingness to get onto a plant floor — not the exact branch.',
         },
         {
           lead: 'Genuinely willing to travel',
           text: 'and to work on a plant floor — hot, loud, and unglamorous. If the idea of spending a week commissioning a system at a factory sounds good rather than off-putting, this is for you.',
         },
         {
-          lead: 'Comfortable with data and code:',
-          text: 'you can work with Python and basic SQL, use pandas to pull a dataset apart, and make a clear chart. You do not need production-grade software experience, but you should be able to write a script that works.',
+          lead: 'Some basic coding knowledge:',
+          text: 'you can write a simple Python script and are comfortable working with data. You do not need production-grade software experience — the willingness to learn matters more.',
         },
         {
           lead: 'A basic, honest grasp of machine learning:',
@@ -137,7 +129,7 @@ export const businessBrainAssociate: Role = {
       kind: 'prose',
       body: [
         'This is a rare role for a fresher: you will see the whole arc, from a raw PLC signal on a factory floor to a decision a plant owner acts on. You will learn industrial automation, real data analytics on messy data, and applied machine learning — from a senior team that has shipped all three.',
-        'You will work directly with the Founder and the senior engineers, with real responsibility from the start. We are small enough that your work reaches a customer quickly, and we will invest in you as our first graduate hire.',
+        'You will work directly with the Founder and the senior engineers, with real responsibility from the start. We are small enough that your work reaches a customer quickly, and we will invest in your growth.',
       ],
     },
     {

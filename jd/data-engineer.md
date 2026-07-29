@@ -46,9 +46,9 @@ getting it right is what makes everything above it possible.
 
 ## Who should apply
 
-We are looking for a recent graduate in **Computer Science, IT, Data Science,
-Electronics, Instrumentation, or a related field**. What matters is comfort with
-data and code, not the exact branch.
+We are looking for a recent graduate in **any engineering discipline or a
+related field**. What matters is comfort with data and code, not the exact
+branch.
 
 You are a strong fit if you have:
 
@@ -91,7 +91,7 @@ warehouse); basic cloud or Linux comfort; Git and the command line.
 | **Location** | Pune, with occasional travel to customer sites |
 | **Type** | Full-time, graduate / entry-level |
 | **Reports to** | Founder and senior team |
-| **Eligibility** | 2025 and 2026 graduates; CS / IT / Data Science / Electronics / Instrumentation or related |
+| **Eligibility** | 2025 and 2026 graduates; any engineering discipline; basic coding knowledge |
 | **Compensation** | _[To be confirmed by MonoEdge — please fill before circulating]_ |
 
 ## Selection process

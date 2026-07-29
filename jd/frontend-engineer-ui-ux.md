@@ -47,8 +47,8 @@ is the whole job. A screen that is beautiful but confusing has failed.
 
 ## Who should apply
 
-We are looking for a recent graduate in **Computer Science, IT, Design, or a
-related field** — or a self-taught developer with work to show. The degree
+We are looking for a recent graduate in **any engineering discipline, Computer
+Science, or Design** — or a self-taught developer with work to show. The degree
 matters less than what you have built.
 
 You are a strong fit if you have:
@@ -86,7 +86,7 @@ performance; familiarity with Git and the command line.
 | **Location** | Pune, with occasional travel to customer sites |
 | **Type** | Full-time, graduate / entry-level |
 | **Reports to** | Founder and senior team |
-| **Eligibility** | 2025 and 2026 graduates; CS / IT / Design or related |
+| **Eligibility** | 2025 and 2026 graduates; any engineering discipline or Design; basic coding knowledge |
 | **Compensation** | _[To be confirmed by MonoEdge — please fill before circulating]_ |
 
 ## Selection process
