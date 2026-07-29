@@ -102,9 +102,10 @@ performance; familiarity with Git and the command line.
 
 ## How to apply
 
-Apply here: **https://monoedge.in/hiring/frontend-engineer-a7f3d2/**
+Apply online: **https://careers.monoedge.in/frontend-engineer-a7f3d2/**
 
-Or email your CV — and a link to your work — to **krishna@monoedge.in**.
+Or email your CV — and a link to your work — to **krishna@monoedge.in** with the
+role in the subject line.
 
 **Placement cells and college partners:** you are welcome to share the link
 above directly with students. For campus drives or to schedule a session,

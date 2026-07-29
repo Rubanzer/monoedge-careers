@@ -4,15 +4,19 @@ A careers index listing the open roles, plus one application page per role. Each
 role page carries its own job description, screening questions, and written
 question, and works as a standalone link you can send to one candidate.
 
+The site is served at **https://careers.monoedge.in/** (custom domain set via
+`public/CNAME`; GitHub Pages otherwise serves it at
+`https://rubanzer.github.io/monoedge-careers/`).
+
 | Page | URL |
 | --- | --- |
-| Careers index | `/hiring/` |
-| Senior Computer Vision Engineer | `/hiring/computer-vision-engineer-7f3ac1/` |
-| Senior Data Scientist | `/hiring/data-scientist-4b9e26/` |
-| Graphic Designer & Video Editor | `/hiring/graphic-designer-d8c105/` |
-| Graduate Engineer — Business Brain | `/hiring/business-brain-associate-5c1a7e/` |
-| Front End Engineer — UI / UX | `/hiring/frontend-engineer-a7f3d2/` |
-| Data Engineer | `/hiring/data-engineer-b4e8c1/` |
+| Careers index | `https://careers.monoedge.in/` |
+| Senior Computer Vision Engineer | `https://careers.monoedge.in/computer-vision-engineer-7f3ac1/` |
+| Senior Data Scientist | `https://careers.monoedge.in/data-scientist-4b9e26/` |
+| Graphic Designer & Video Editor | `https://careers.monoedge.in/graphic-designer-d8c105/` |
+| Graduate Engineer — Business Brain | `https://careers.monoedge.in/business-brain-associate-5c1a7e/` |
+| Front End Engineer — UI / UX | `https://careers.monoedge.in/frontend-engineer-a7f3d2/` |
+| Data Engineer | `https://careers.monoedge.in/data-engineer-b4e8c1/` |
 
 Slugs keep their random suffix from when the pages were unlisted. It no longer
 buys anything now that the index links to all of them, but the URLs are
