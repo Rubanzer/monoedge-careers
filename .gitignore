@@ -6,3 +6,6 @@ dist/
 
 # Never commit the source PDFs — they are inputs, not site content.
 *.pdf
+
+# ...but the generated JD PDFs are deliverables we share with colleges.
+!jd/pdf/*.pdf
