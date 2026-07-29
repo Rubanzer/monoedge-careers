@@ -43,7 +43,7 @@ export function JobBody({ role }: { role: Role }) {
         <aside className="lg:sticky lg:top-10 lg:self-start">
           <p className="t-label">The role</p>
           <p className="t-readout mt-3 text-[color:var(--color-muted)]">
-            Senior individual contributor. One of three open roles at MonoEdge.
+            {role.positioning ?? 'Senior individual contributor.'} One of four open roles at MonoEdge.
           </p>
           <a href="#apply" className="btn btn-quiet mt-6 inline-block no-underline">
             Apply

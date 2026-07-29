@@ -33,7 +33,12 @@ export type Role = {
   /** One line for <meta description> and link previews. */
   summary: string;
   /** The motif drawn in the hero — each role gets its own instrument. */
-  signal: 'calibration' | 'timeseries' | 'frame';
+  signal: 'calibration' | 'timeseries' | 'frame' | 'network';
+  /**
+   * The one-line standing shown in the page sidebar. Defaults to the senior
+   * IC line; graduate and other roles override it.
+   */
+  positioning?: string;
   sections: Section[];
   screening: ScreeningQuestion[];
   /** Part 3 — the long-form answer we actually read. */

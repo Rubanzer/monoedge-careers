@@ -2,8 +2,9 @@ import type { Role } from '../roles';
 
 /**
  * Each role gets the instrument from its own discipline: a calibration target
- * for vision, a control chart for analytics, crop marks for design. Same
- * system, same palette, different tool.
+ * for vision, a control chart for analytics, crop marks for design, and a
+ * deployment topology for the Business Brain role. Same system, same palette,
+ * different tool.
  */
 export function Signal({ kind }: { kind: Role['signal'] }) {
   const common = {
@@ -53,6 +54,31 @@ export function Signal({ kind }: { kind: Role['signal'] }) {
         />
         <circle cx="72" cy="44" r="3" fill="var(--color-paper)" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
         <path d="M12 88h96M12 32h96" stroke="var(--color-rule-strong)" strokeWidth="1" />
+      </svg>
+    );
+  }
+
+  if (kind === 'network') {
+    // A small deployment topology: a central hub wired out to field devices
+    // and PLC blocks — our system standing up on a plant floor.
+    return (
+      <svg {...common}>
+        <path
+          d="M60 60L24 28M60 60L96 24M60 60L26 96M60 60L96 96"
+          stroke="var(--color-edge-blue)"
+          strokeWidth="1"
+          opacity="0.45"
+        />
+        {/* field nodes */}
+        <circle cx="24" cy="28" r="5" fill="var(--color-paper)" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        <circle cx="26" cy="96" r="5" fill="var(--color-paper)" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        {/* PLC / controller blocks */}
+        <rect x="88" y="16" width="16" height="16" fill="var(--color-edge-blue)" opacity="0.12" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        <rect x="88" y="88" width="16" height="16" fill="var(--color-edge-blue)" opacity="0.12" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        {/* central hub — our system */}
+        <circle cx="60" cy="60" r="12" fill="var(--color-ice)" opacity="0.18" />
+        <circle cx="60" cy="60" r="12" stroke="var(--color-edge-blue)" strokeWidth="1" />
+        <circle cx="60" cy="60" r="3" fill="var(--color-edge-blue)" />
       </svg>
     );
   }

@@ -31,6 +31,7 @@ var ROLE_SHEETS = {
   'CV-ENG': 'Sheet1', // Senior Computer Vision Engineer
   'DATA-SCI': 'Sheet2', // Senior Data Scientist
   'DESIGN': 'Sheet3', // Graphic Designer & Video Editor
+  'BIZ-BRAIN': 'Sheet4', // Graduate Engineer — Business Brain
 };
 
 // A human filling three parts cannot get here in under this many seconds.
