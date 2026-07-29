@@ -32,6 +32,8 @@ var ROLE_SHEETS = {
   'DATA-SCI': 'Sheet2', // Senior Data Scientist
   'DESIGN': 'Sheet3', // Graphic Designer & Video Editor
   'BIZ-BRAIN': 'Sheet4', // Graduate Engineer — Business Brain
+  'FRONTEND': 'Sheet5', // Front End Engineer — UI / UX
+  'DATA-ENG': 'Sheet6', // Data Engineer
 };
 
 // A human filling three parts cannot get here in under this many seconds.

@@ -1,5 +1,6 @@
 import type { Role } from '../roles';
 import { useReveal } from '../lib/hooks';
+import { roleCountWord } from '../lib/count';
 
 function Section({ section }: { section: Role['sections'][number] }) {
   const ref = useReveal<HTMLElement>();
@@ -43,7 +44,7 @@ export function JobBody({ role }: { role: Role }) {
         <aside className="lg:sticky lg:top-10 lg:self-start">
           <p className="t-label">The role</p>
           <p className="t-readout mt-3 text-[color:var(--color-muted)]">
-            {role.positioning ?? 'Senior individual contributor.'} One of four open roles at MonoEdge.
+            {role.positioning ?? 'Senior individual contributor.'} One of {roleCountWord()} open roles at MonoEdge.
           </p>
           <a href="#apply" className="btn btn-quiet mt-6 inline-block no-underline">
             Apply

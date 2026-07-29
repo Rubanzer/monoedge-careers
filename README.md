@@ -11,6 +11,8 @@ question, and works as a standalone link you can send to one candidate.
 | Senior Data Scientist | `/hiring/data-scientist-4b9e26/` |
 | Graphic Designer & Video Editor | `/hiring/graphic-designer-d8c105/` |
 | Graduate Engineer — Business Brain | `/hiring/business-brain-associate-5c1a7e/` |
+| Front End Engineer — UI / UX | `/hiring/frontend-engineer-a7f3d2/` |
+| Data Engineer | `/hiring/data-engineer-b4e8c1/` |
 
 Slugs keep their random suffix from when the pages were unlisted. It no longer
 buys anything now that the index links to all of them, but the URLs are
@@ -46,9 +48,10 @@ and redeploy without rebuilding.
 
 Each role writes to its own tab, mapped in `ROLE_SHEETS` at the top of the script:
 CV Engineer → `Sheet1`, Data Scientist → `Sheet2`, Designer → `Sheet3`, Business
-Brain graduate → `Sheet4`. Headers are written the first time a tab is used, and
-missing tabs are created. CVs go to a `MonoEdge Applications/<role>/` folder in
-Drive, and the Sheet stores a link.
+Brain graduate → `Sheet4`, Front End Engineer → `Sheet5`, Data Engineer →
+`Sheet6`. Headers are written the first time a tab is used, and missing tabs are
+created. CVs go to a `MonoEdge Applications/<role>/` folder in Drive, and the
+Sheet stores a link.
 
 **After editing `Code.gs`, redeploy as a new version** — Manage deployments →
 edit → Version: New version. Otherwise the live URL keeps serving the old code.
