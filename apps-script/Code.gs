@@ -34,6 +34,8 @@ var ROLE_SHEETS = {
   'BIZ-BRAIN': 'Sheet4', // Graduate Engineer — Business Brain
   'FRONTEND': 'Sheet5', // Front End Engineer — UI / UX
   'DATA-ENG': 'Sheet6', // Data Engineer
+  'PO-SIGNAL': 'Sheet7', // Product Owner — Signal Analytics
+  'PO-BRAIN': 'Sheet8', // Product Owner — Business Brain
 };
 
 // A human filling three parts cannot get here in under this many seconds.

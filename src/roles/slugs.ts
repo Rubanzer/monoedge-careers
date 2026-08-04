@@ -7,6 +7,8 @@ export const ROLE_SLUGS = [
   'business-brain-associate-5c1a7e',
   'frontend-engineer-a7f3d2',
   'data-engineer-b4e8c1',
+  'product-owner-signal-analytics-2d9f4a',
+  'product-owner-business-brain-7b3e6c',
 ] as const;
 
 export type RoleSlug = (typeof ROLE_SLUGS)[number];

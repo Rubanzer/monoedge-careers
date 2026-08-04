@@ -4,8 +4,9 @@ import type { Role } from '../roles';
  * Each role gets the instrument from its own discipline: a calibration target
  * for vision, a control chart for analytics, crop marks for design, a
  * deployment topology for the Business Brain role, a wireframe for front-end,
- * and a pipeline for data engineering. Same system, same palette, different
- * tool.
+ * a pipeline for data engineering, a signal trace for signal analytics, and a
+ * roadmap for the Business Brain product owner. Same system, same palette,
+ * different tool.
  */
 export function Signal({ kind }: { kind: Role['signal'] }) {
   const common = {
@@ -127,6 +128,54 @@ export function Signal({ kind }: { kind: Role['signal'] }) {
           strokeWidth="1.5"
           fill="none"
         />
+      </svg>
+    );
+  }
+
+  if (kind === 'waveform') {
+    // A signal trace with a flagged event — high-frequency plant data turned
+    // into early warning.
+    return (
+      <svg {...common}>
+        <path d="M12 60h96" stroke="var(--color-edge-blue)" strokeWidth="1" opacity="0.35" strokeDasharray="2 4" />
+        <path
+          d="M12 60 Q 24 40 36 60 T 60 60 T 84 60 T 108 60"
+          stroke="var(--color-edge-blue)"
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 60 Q 18 52 24 60 T 36 60 T 48 60 T 60 60 T 72 60 T 84 60 T 96 60 T 108 60"
+          stroke="var(--color-ice)"
+          strokeWidth="1"
+          fill="none"
+          opacity="0.6"
+        />
+        {/* flagged event */}
+        <path d="M72 88V44" stroke="var(--color-edge-blue)" strokeWidth="1" opacity="0.4" strokeDasharray="2 3" />
+        <circle cx="72" cy="44" r="3" fill="var(--color-paper)" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        <path d="M12 88h96M12 32h96" stroke="var(--color-rule-strong)" strokeWidth="1" />
+      </svg>
+    );
+  }
+
+  if (kind === 'roadmap') {
+    // A timeline with prioritised milestone cards — backlog and roadmap.
+    return (
+      <svg {...common}>
+        <path d="M16 66h80" stroke="var(--color-edge-blue)" strokeWidth="1" opacity="0.6" />
+        <path d="M96 66l-6-4M96 66l-6 4" stroke="var(--color-edge-blue)" strokeWidth="1" opacity="0.6" fill="none" />
+        {/* connectors */}
+        <path d="M30 66V44M56 66V80M82 66V44" stroke="var(--color-edge-blue)" strokeWidth="1" opacity="0.35" />
+        {/* milestone nodes */}
+        <circle cx="30" cy="66" r="3" fill="var(--color-edge-blue)" />
+        <circle cx="56" cy="66" r="3" fill="var(--color-edge-blue)" />
+        <circle cx="82" cy="66" r="3" fill="var(--color-paper)" stroke="var(--color-edge-blue)" strokeWidth="1.5" />
+        {/* cards — the middle one is the current priority */}
+        <rect x="20" y="30" width="20" height="14" rx="2" stroke="var(--color-edge-blue)" strokeWidth="1" fill="none" />
+        <rect x="46" y="80" width="20" height="14" rx="2" fill="var(--color-ice)" opacity="0.18" stroke="var(--color-edge-blue)" strokeWidth="1" />
+        <rect x="72" y="30" width="20" height="14" rx="2" stroke="var(--color-edge-blue)" strokeWidth="1" fill="none" />
       </svg>
     );
   }

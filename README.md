@@ -17,6 +17,8 @@ The site is served at **https://careers.monoedge.in/** (custom domain set via
 | Graduate Engineer — Business Brain | `https://careers.monoedge.in/business-brain-associate-5c1a7e/` |
 | Front End Engineer — UI / UX | `https://careers.monoedge.in/frontend-engineer-a7f3d2/` |
 | Data Engineer | `https://careers.monoedge.in/data-engineer-b4e8c1/` |
+| Product Owner — Signal Analytics | `https://careers.monoedge.in/product-owner-signal-analytics-2d9f4a/` |
+| Product Owner — Business Brain | `https://careers.monoedge.in/product-owner-business-brain-7b3e6c/` |
 
 Slugs keep their random suffix from when the pages were unlisted. It no longer
 buys anything now that the index links to all of them, but the URLs are
@@ -53,9 +55,9 @@ and redeploy without rebuilding.
 Each role writes to its own tab, mapped in `ROLE_SHEETS` at the top of the script:
 CV Engineer → `Sheet1`, Data Scientist → `Sheet2`, Designer → `Sheet3`, Business
 Brain graduate → `Sheet4`, Front End Engineer → `Sheet5`, Data Engineer →
-`Sheet6`. Headers are written the first time a tab is used, and missing tabs are
-created. CVs go to a `MonoEdge Applications/<role>/` folder in Drive, and the
-Sheet stores a link.
+`Sheet6`, PO Signal Analytics → `Sheet7`, PO Business Brain → `Sheet8`. Headers
+are written the first time a tab is used, and missing tabs are created. CVs go to
+a `MonoEdge Applications/<role>/` folder in Drive, and the Sheet stores a link.
 
 **After editing `Code.gs`, redeploy as a new version** — Manage deployments →
 edit → Version: New version. Otherwise the live URL keeps serving the old code.

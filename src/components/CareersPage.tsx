@@ -66,9 +66,8 @@ export function CareersPage() {
             <p className="mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-[color:var(--color-muted)]">
               MonoEdge builds an intelligence layer for Indian mid-market manufacturing — software that
               behaves like an always-on analyst rather than another dashboard to manage. We are
-              bootstrapped, small, and hiring people who work directly with the Founder — senior
-              individual contributors, and a set of graduate engineers building the next generation of
-              the product.
+              bootstrapped, small, and hiring across engineering, product, and design — from graduate
+              engineers to senior individual contributors, all working directly with the Founder.
             </p>
           </div>
         </div>
