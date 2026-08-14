@@ -40,9 +40,10 @@ mark_b64 = base64.b64encode((REPO / "public" / "monoedge-mark.png").read_bytes()
 MARK = f"data:image/png;base64,{mark_b64}"
 
 DOCS = [
-    "business-brain-graduate-engineer.md",
+    "ai-engineer-rag-agentic.md",
+    "backend-data-platform-engineer.md",
     "frontend-engineer-ui-ux.md",
-    "data-engineer.md",
+    "devops-engineer.md",
 ]
 
 CSS = """
